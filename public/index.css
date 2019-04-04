@@ -1,0 +1,220 @@
+html, body, .container, #root {
+    height: 100%;
+    background: #737373;
+    overflow: hidden;
+    font-family: sans-serif;
+  }
+  .main-header, .main-footer {
+    height: 15%;
+  }
+  main {
+    height: 70%;
+    margin: 0 15%;
+    display: flex;
+    background: white;
+    box-shadow: 0 0 45px 14px rgba(0, 0, 0, 0.63);
+    border-radius: 5px;
+  }
+  
+  main > aside {
+    width: 30%;
+    background: #DCDDE2;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    display: flex;
+    flex-direction: column;
+  }
+   main > .details {
+    width: 70%;
+  }
+  
+  .search-box {
+    padding: 1rem;
+  }
+  
+  input[type="search"] {
+    display: block;
+    width: 100%;
+    -webkit-appearance: none;
+    border: 1px solid #D0C3C3;
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0.3rem;
+    font-size: 1.1rem;
+    color: black;
+    border-radius: 4px;
+  }
+  
+  .list {
+    overflow: auto;
+  }
+  
+  .list ul li {
+       color: #3C3C3C;
+     padding-left: 2rem;
+     padding-top: 0.25rem;
+     padding-bottom: 0.25rem;
+     white-space: pre;
+  }
+  .list ul li:not(.divider) {
+     cursor: pointer;
+  }
+  
+  .list ul li.selected {
+    background: steelblue;
+    color: #DCDDE2;
+  }
+  
+  .list ul li:not(.selected):hover {
+    color: #000;
+  }
+  
+  .list ul li em {
+    font-weight: bold;
+  }
+  
+  .list .divider {
+    padding-left: 1rem;
+    background: rgba(0,0,0,0.1);
+  }
+  
+  .empty {
+    text-align: center;
+    align-self: center;
+    flex: 1;
+  }
+  
+  .details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .details > header {
+    display: flex;
+    margin: 1rem 0;
+    align-items: center;
+    width: 90%;
+  }
+  
+  .details .picture {
+    min-width: 100px;
+    width: 100px;
+    height: 100px;
+    background: gray;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .details .picture .profile-picture {
+    border-radius: 50%;
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .details .picture .initials {
+    color: white;
+    font-weight: 100;
+    font-size: 2.5rem;
+  }
+  
+  .details .title {
+    padding: 0 1rem;
+  }
+  
+  .details .title h1 {
+    font-size: 1.8rem;
+    font-weight: 100;
+  }
+  
+  .details .title .subtitle {
+    padding: 0.5rem 0;
+    color: #3C3C3C;
+  }
+  
+  .details table {
+    width: 80%;
+  }
+  
+  .details table td {
+    padding: 0.25rem;
+  }
+  .details tr:not(:last-child) td {
+    border-bottom: 1px solid #E0E0E0;
+  }
+  
+  .details table td:first-child {
+    text-align: right;
+    width: 25%;
+    color: #737373;
+  }
+  
+  .details > footer {
+    padding: 1rem 0;
+    display: flex;
+      justify-content: space-between;
+    width: 100%;
+  }
+  
+  .details > footer > div {
+    margin: 0 0.5rem;
+  }
+  
+  .details > footer  button {
+    font-size: 1rem;
+    border: 1px solid gray;
+    background: none;
+    border-radius: 5px;
+    cursor: pointer;
+    min-width: 2rem;
+    margin: 0 0.25rem;
+  }
+  .editing.details input {
+    border: 0;
+    font-size: inherit;
+    display: inline-block;
+    padding: 0;
+  }
+  
+  .editing.details input:focus {
+    outline: none;
+  }
+  .editing.details .upload-picture {
+    display: block;
+    width: 100px;
+  }
+
+  input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.create-form {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
