@@ -1,8 +1,6 @@
-import React, { Component } from "react";
-import { observable, action ,computed} from "mobx";
+import React from "react";
+import { observable, action } from "mobx";
 import {observer, inject} from 'mobx-react';
-import {AppState} from "./AppState";
-import {client} from '../axios'
 import {toJS} from 'mobx'
 
 @inject('appState')
@@ -54,11 +52,11 @@ class CreateNew extends React.Component {
   @action
   handleFormSubmit = e => {
     console.log("fef", this.newObj.name);
-    this.props.appState.addNewItem(toJS(this.newObj),e)
-     this.props.appState.key = ! this.props.appState.key
-      this.newObj.name =""
-      this.newObj.desc =""      
-     this.props.appState.myValue = toJS(this.props.appState.myValue )
+    this.props.appState.addNewItem(toJS(this.newObj),e);
+     this.props.appState.key = ! this.props.appState.key;
+      this.newObj.name ="";
+      this.newObj.desc ="" ;
+     this.props.appState.myValue = toJS(this.props.appState.myValue );
      e.preventDefault(); 
   };
 }

@@ -1,19 +1,12 @@
 import * as React from 'react';
-import {Component,PropTypes} from 'react';
+import {Component} from 'react';
 import {observer, inject} from 'mobx-react';
 import {withRouter } from 'react-router'
 import {Link} from 'react-router-dom'
-import {toJS} from 'mobx'
 import Empty from './Empty';
-import {AappState} from './AppState'
-
-// var el = document.getElementById('delete_btn');
-// if(el){
-//     el.addEventListener('click', onButtonClick);
-// }
 
 
-    @inject('appState')
+@inject('appState')
     @observer
  class ItemDetails extends Component {
   onButtonClick(id) {
@@ -25,7 +18,6 @@ import {AappState} from './AppState'
       var item =this.props.appState.selected;
       console.log("i",item);
      
-      
     if (!item) {
         
       return <Empty/>
@@ -47,7 +39,7 @@ import {AappState} from './AppState'
         </table>
         <footer>
           <div className="left">
-            <Link to="/new" />
+            <Link to="/new" >Create New</Link>
           </div>
           <div className="right">
             <button  id ="delete_btn" onClick={() => this.onButtonClick(item.id)} >Delete</button>

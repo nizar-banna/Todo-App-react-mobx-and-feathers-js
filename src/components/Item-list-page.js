@@ -1,8 +1,8 @@
 import React from 'react';
 import ItemList from './ItemList'
 import {observer, inject} from 'mobx-react';
-import {AppState} from './AppState';
 import { toJS,isObservable } from 'mobx';
+import List from '@material-ui/core/List';
 
 @inject('appState')   
 @observer
@@ -10,11 +10,9 @@ import { toJS,isObservable } from 'mobx';
 
      itemsResult() {
         var items = this.props.appState.getAllitems;
-        var result = [];
         if (!items.length) return [1];
        return toJS(items).map(i => <ItemList item={toJS(i)}/> );
-       console.log("page toJS")           
-       
+
     }
         
     componentDidMount(){
@@ -24,8 +22,10 @@ import { toJS,isObservable } from 'mobx';
   
     render() {
         return (
-           this.itemsResult()
-        )  
+            <List style={{maxHeight: '100%', overflow: 'auto'}}>      
+            {this.itemsResult()}
+            </List>
+        )
 
     }
 }

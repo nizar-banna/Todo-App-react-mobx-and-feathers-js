@@ -1,29 +1,16 @@
-import {Component} from 'react';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import {Provider} from 'mobx-react';
 import { Switch, Route,Router } from 'react-router';
-// import { BrowserRouter  } from 'react-router-dom';
 import history from './history';
 import Empty from './components/Empty';
 import App from './App';
-  import {AppState} from './components/AppState';
+import {AppState} from './AppState';
 import ItemDetails from './components/ItemDetails';
 import CreateNew from './components/CreateNew';
 import EditItem from './components/EditItem';
 
-
-
-
 const appState =  new AppState();
-
-// const customHistory = createBrowserHistory(); 
-// this is the default behavior
-function getConfirmation(message, callback) {
-  const allowTransition = window.confirm(message);
-  callback(allowTransition);
-}
-const supportsHistory = 'pushState' in window.history
 
 ReactDOM.render(
   <Provider appState={appState}>

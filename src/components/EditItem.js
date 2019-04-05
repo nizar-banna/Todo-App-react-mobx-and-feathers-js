@@ -1,16 +1,12 @@
 import React, { Component } from "react";
-import { observable, action ,computed} from "mobx";
+import { observable, action } from "mobx";
 import {observer, inject} from 'mobx-react';
-import {withRouter } from 'react-router'
-import {Link} from 'react-router-dom'
-import {extendObservable,toJS} from 'mobx'
 import history from '../history';
 import Empty from './Empty';
-import {AappState} from './AppState'
 
 @inject('appState')
 @observer
-class EditItem extends React.Component {
+class EditItem extends Component {
     @observable editObj = this.props.appState.selected;
    
   quit() {
@@ -35,7 +31,7 @@ class EditItem extends React.Component {
   @action
   handleInputChange = e => {   
       this.editObj.name = e.target.value ;
-  }
+  };
   @action
   handleInputDescChange = e => {   
       this.editObj.desc = e.target.value ;
@@ -43,7 +39,7 @@ class EditItem extends React.Component {
 
   render() {
     var item =this.props.appState.selected;
-    console.log("i",item)
+    console.log("i",item);
     
   if (!item) {
     return <Empty/>
@@ -85,15 +81,5 @@ class EditItem extends React.Component {
   }
 }
 
-function TableRow({label, value}) {
-  if (!value) {
-    return <tr></tr>;
-  }
-  return <tr>
-            <td>{label}</td>
-            <td>{value}</td>
-          </tr>
-}
-  
 
 export default EditItem;
