@@ -1,5 +1,6 @@
 ## Brief Description
 ### A Simple Web Application that stores a list of Items and displays them on UI (React and Mobx).
+### [deployment on heroku ](https://todo-mobx.herokuapp.com/)
 ## Technology used in app
 ### As frontend
 #### React JS 
